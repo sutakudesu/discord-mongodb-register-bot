@@ -1,0 +1,13 @@
+{
+  "name": "stark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "stark.js",
+  "author": "Stark",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.11.8"
+  }
+}
