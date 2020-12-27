@@ -24,10 +24,10 @@ exports.execute = async (client, message, args) => {
     }).save().then(x => {
       return message.channel.send(embed.setDescription(`${user} Adlı üyenin ${x.userNames.length} isim kayıtı bulundu. \n\n${x.userNames.map(x => `\`• ${x.nick}\` (${x.type.replace(`Erkek`, `${settins.erkekRolleri[0]}`).replace(`Kız`, `${settins.kızRolleri[0]}`)})`)}`))
     });
+  } else {
+    message.channel.send(embed.setDescription(`${user} Adlı üyenin ${registerData.userNames.length} isim kayıtı bulundu. \n\n${registerData.userNames.map(x => `\`• ${x.nick}\` (${x.type.replace(`Erkek`, `<@&${settings.erkekRolleri[0]}>`).replace(`Kız`, `<@&${settings.kızRolleri[0]}>`)})`).join("\n ")}`))
   }
-
-  message.channel.send(embed.setDescription(`${user} Adlı üyenin ${registerData.userNames.length} isim kayıtı bulundu. \n\n${registerData.userNames.map(x => `\`• ${x.nick}\` (${x.type.replace(`Erkek`, `<@&${settings.erkekRolleri[0]}>`).replace(`Kız`, `<@&${settings.kızRolleri[0]}>`)})`).join("\n ")}`))
-
+  
 };
 
 exports.conf = {
