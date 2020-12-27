@@ -24,10 +24,10 @@ exports.execute = async (client, message, args) => {
     }).save().then(x => {
         return message.channel.send(embed.addField(`❯ Kullanıcı Bilgisi`, `\`•\` Hesap: ${user} \n\`•\` Sunucu İsmi: ${user.displayName} \n\`•\` Kullanıcı ID: ${user.id}`).addField(`❯ Kayıt Bilgisi`, `\`•\` Toplam: ${x.totalRegister} \n\`•\` Erkek: ${x.manRegister} \n\`•\` Kız: ${x.womanRegister}`))
     });
+  } else {
+    message.channel.send(embed.addField(`❯ Kullanıcı Bilgisi`, `\`•\` Hesap: ${user} \n\`•\` Sunucu İsmi: ${user.displayName} \n\`•\` Kullanıcı ID: ${user.id}`).addField(`❯ Kayıt Bilgisi`, `\`•\` Toplam: ${registerData.totalRegister} \n\`•\` Erkek: ${registerData.manRegister} \n\`•\` Kız: ${registerData.womanRegister}`))
   }
-
-  message.channel.send(embed.addField(`❯ Kullanıcı Bilgisi`, `\`•\` Hesap: ${user} \n\`•\` Sunucu İsmi: ${user.displayName} \n\`•\` Kullanıcı ID: ${user.id}`).addField(`❯ Kayıt Bilgisi`, `\`•\` Toplam: ${registerData.totalRegister} \n\`•\` Erkek: ${registerData.manRegister} \n\`•\` Kız: ${registerData.womanRegister}`))
-
+  
 };
 
 exports.conf = {
