@@ -22,5 +22,5 @@ fs.readdirSync("./events").filter(file => file.endsWith(".js")).forEach(file => 
     console.log(`[Event] ${file.replace(".js", "")} event loaded.`);
 });
 
-mongoose.connect(`mongodb+srv://stark:o7ri18TfsCTJaz9w@register.gd6cl.mongodb.net/register?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true}).then(c => console.log(`MongoDB connected!`)).catch(err => console.error(`Failed to connect to MongoDB!`));
+mongoose.connect(``, {useNewUrlParser: true, useUnifiedTopology: true}).then(c => console.log(`MongoDB connected!`)).catch(err => console.error(`Failed to connect to MongoDB!`));
 client.login(config.Token).then(c => console.log(`Logged in as ${client.user.tag}!`)).catch(err => console.error(`Failed to login to the bot!`));
