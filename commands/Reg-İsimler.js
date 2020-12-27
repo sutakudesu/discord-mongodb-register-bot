@@ -22,7 +22,7 @@ exports.execute = async (client, message, args) => {
       manRegister: 0,
       userNames: []
     }).save().then(x => {
-      return message.channel.send(embed.setDescription(`${user} Adlı üyenin ${registerData.userNames.length} isim kayıtı bulundu. \n\n${registerData.userNames.map(x => `\`• ${x.nick}\` (${x.type.replace(`Erkek`, `${settins.erkekRolleri[0]}`).replace(`Kız`, `${settins.kızRolleri[0]}`)})`)}`))
+      return message.channel.send(embed.setDescription(`${user} Adlı üyenin ${x.userNames.length} isim kayıtı bulundu. \n\n${x.userNames.map(x => `\`• ${x.nick}\` (${x.type.replace(`Erkek`, `${settins.erkekRolleri[0]}`).replace(`Kız`, `${settins.kızRolleri[0]}`)})`)}`))
     });
   }
 
