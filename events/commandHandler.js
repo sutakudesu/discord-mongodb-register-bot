@@ -4,12 +4,11 @@ const config = require("../config.json");
 exports.execute = async (message) => {
   
   let client = message.client;
-  let prefix = config.Prefix.find(x => message.content.toLowerCase().startsWith(x))
   if (message.author.bot) return;
   if (!message.guild) return;
 
-  if (prefix) {
-    let args = message.content.substring(prefix.length).trim().split(" ")
+  if (message.content.toLowerCase().startsWith(config.Prefix)) {
+    let args = message.content.substring(config.Prefix.length).trim().split(" ")
     let command = args[0]
 
     args = args.splice(1);
