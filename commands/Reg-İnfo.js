@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-const mongoose = require("mongoose");
 const Register = require('../models/Register.js');
 const settings = require("../settings.json");
 
@@ -14,7 +13,6 @@ exports.execute = async (client, message, args) => {
 
   if(!registerData) {
     let newRegisterData = new Register({
-      _id: new mongoose.Types.ObjectId(),
       guildId: message.guild.id,
       userId: user.id,
       totalRegister: 0,
