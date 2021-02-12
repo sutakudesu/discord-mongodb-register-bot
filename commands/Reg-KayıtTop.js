@@ -7,7 +7,7 @@ exports.execute = async (client, message, args) => {
 
   let embed = new Discord.MessageEmbed().setAuthor(message.author.username, message.author.avatarURL({ dynamic: true }));
     
-  let registerTop = await Register.find({ guildId: message.guild.id }).sort([["totalRegister", "descending"]]).exec();
+  let registerTop = await Register.find({ guildId: message.guild.id }).sort({ totalRegister: -1 }).exec();
 
   if(!registerTop.length) return message.channel.send(embed.setDescription(`Herhangi bir kayıt verisi bulunamadı!`))
   registerTop = registerTop.filter(x => message.guild.members.cache.has(x.userId)).splice(0, 10)
